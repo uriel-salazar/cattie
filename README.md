@@ -16,3 +16,6 @@ wanted to make something related to them. This is because I've always loved cats
 ![alt text](figure.png)
 I routed the PCB and now it looked like this, I also added some tiny images to make it mine! 
 ![alt text](3d_view.png)
+
+I added a new functionality which consists of getting my pet "dead" if you shake the pcb a bit too much. If you shake it too much, you'll see a display saying RIP "cattie", with this tiny functionality, it helped more to understand the starbie code. 
+Also, I was searching for a lot of pixel art images to get a 32x32  image to add it to the variable PROGMEM PET_SPRITE[] with image2cpp. But finally I found one sprite that I could use and it work well with image 2cpp. 
