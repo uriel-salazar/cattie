@@ -12,44 +12,17 @@
   Arduino IDE will offer to install their dependencies too. Click Install All.
 */
 
-void checkForShake() {
-  if (!mpuFound || currentView != PET_VIEW ||
-      lifeState != ALIVE) {
-    return;
-  }
+  #include <Wire.h>
+  #include <Adafruit_GFX.h>
+  #include <Adafruit_SSD1306.h>
+  #include <Adafruit_MPU6050.h>
+  #include <DHT.h>
+  #include <Preferences.h>
+  #include <math.h>
 
-  const float magnitude = sqrtf(
-      accelerationX * accelerationX +
-      accelerationY * accelerationY +
-      accelerationZ * accelerationZ
-  );
+ 
 
-  const uint32_t now = millis();
 
-  if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
-      now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
-
-    lastShakeAt = now;
-    lifeState = DEAD;
-    deathTime = now;
-
-    nappingUntil = 0;
-    shakeAnimationEndsAt = 0;
-    petJumpStartedAt = 0;
-
-    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE,
-              SHAKE_FULLNESS_CHANGE);
-    savePet();
-  }
-}
-
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-#include <Adafruit_MPU6050.h>
-#include <DHT.h>
-#include <Preferences.h>
-#include <math.h>
 
 // =========================== BEGINNER SETTINGS ===========================
 // Everything most builders will want to customize is in this one section.
@@ -264,6 +237,43 @@ void savePet() {
   preferences.putInt("full", pet.fullness);
 }
 
+
+
+void checkForShake() {
+  if (!mpuFound || currentView != PET_VIEW ||
+      lifeState != ALIVE) {
+    return;
+  }
+
+  const float magnitude = sqrtf(
+    accelerationX * accelerationX +
+    accelerationY * accelerationY +
+    accelerationZ * accelerationZ
+  );
+
+  const uint32_t now = millis();
+
+  if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
+      now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
+
+    lastShakeAt = now;
+    lifeState = DEAD;
+    deathTime = now;
+
+    nappingUntil = 0;
+    shakeAnimationEndsAt = 0;
+    petJumpStartedAt = 0;
+
+    changePet(
+      SHAKE_JOY_CHANGE,
+      SHAKE_ENERGY_CHANGE,
+      SHAKE_FULLNESS_CHANGE
+    );
+
+    savePet();
+  }
+}
+
 void setUpButton(ButtonState &button) {
   pinMode(button.pin, INPUT_PULLUP);
   button.stableState = digitalRead(button.pin);
@@ -389,31 +399,6 @@ void updateMenuBall() {
 }
 
 
-
-  const float magnitude = sqrtf(
-      accelerationX * accelerationX +
-      accelerationY * accelerationY +
-      accelerationZ * accelerationZ
-  );
-
-  const uint32_t now = millis();
-
-  if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
-      now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
-
-    lastShakeAt = now;
-    lifeState = DEAD;
-    deathTime = now;
-
-    nappingUntil = 0;
-    shakeAnimationEndsAt = 0;
-    petJumpStartedAt = 0;
-
-    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE,
-              SHAKE_FULLNESS_CHANGE);
-    savePet();
-  }
-}
 
 
 void openMenu() {
@@ -684,29 +669,34 @@ void setup() {
   drawCurrentView();
 }
 
+
 void loop() {
   updateMpu();
   updateDht();
 
-  if (lifeState == DEAD ){
-    if(millis() - deathTime >= 3000){
+  // Return to life after the fake-death animation.
+  if (lifeState == DEAD) {
+    if (millis() - deathTime >= 3000) {
       lifeState = ALIVE;
-    }
-    else {
+    } else {
       drawCurrentView();
       delay(16);
       return;
     }
   }
+
   updatePetTimers();
   handleButtons();
 
   if (currentView == MENU_VIEW) {
-    updateMenuBall();
+    if (mpuFound) {
+      updateMenuBall();
+    }
   } else {
     checkForShake();
   }
 
   drawCurrentView();
-  delay(16);  // Smooth display updates without making the code complicated.
+
+  delay(16);
 }
