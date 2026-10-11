@@ -12,6 +12,37 @@
   Arduino IDE will offer to install their dependencies too. Click Install All.
 */
 
+void checkForShake() {
+  if (!mpuFound || currentView != PET_VIEW ||
+      lifeState != ALIVE) {
+    return;
+  }
+
+  const float magnitude = sqrtf(
+      accelerationX * accelerationX +
+      accelerationY * accelerationY +
+      accelerationZ * accelerationZ
+  );
+
+  const uint32_t now = millis();
+
+  if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
+      now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
+
+    lastShakeAt = now;
+    lifeState = DEAD;
+    deathTime = now;
+
+    nappingUntil = 0;
+    shakeAnimationEndsAt = 0;
+    petJumpStartedAt = 0;
+
+    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE,
+              SHAKE_FULLNESS_CHANGE);
+    savePet();
+  }
+}
+
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -168,6 +199,14 @@ enum View {
   MENU_VIEW,
   STATS_VIEW,
 };
+
+enum LifeState{
+  ALIVE,
+  DEAD
+};
+
+LifeState lifeState = ALIVE; 
+unsigned long deathTime = 0; 
 
 PetState pet = {STARTING_JOY, STARTING_ENERGY, STARTING_FULLNESS};
 ButtonState buttonOne = {BUTTON_ONE_PIN, HIGH, HIGH, 0};
@@ -349,24 +388,33 @@ void updateMenuBall() {
   }
 }
 
-void checkForShake() {
-  if (!mpuFound || currentView != PET_VIEW) {
-    return;
-  }
 
-  const float magnitude = sqrtf(accelerationX * accelerationX +
-                                accelerationY * accelerationY +
-                                accelerationZ * accelerationZ);
+
+  const float magnitude = sqrtf(
+      accelerationX * accelerationX +
+      accelerationY * accelerationY +
+      accelerationZ * accelerationZ
+  );
+
   const uint32_t now = millis();
+
   if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
       now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
+
     lastShakeAt = now;
-    nappingUntil = 0;  // A shake wakes a sleeping pet right away.
-    shakeAnimationEndsAt = now + 350;
-    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE, SHAKE_FULLNESS_CHANGE);
+    lifeState = DEAD;
+    deathTime = now;
+
+    nappingUntil = 0;
+    shakeAnimationEndsAt = 0;
+    petJumpStartedAt = 0;
+
+    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE,
+              SHAKE_FULLNESS_CHANGE);
     savePet();
   }
 }
+
 
 void openMenu() {
   currentView = MENU_VIEW;
@@ -581,6 +629,18 @@ void drawStats() {
 }
 
 void drawCurrentView() {
+  // It displays a dead simulation for 3 seconds 
+  if (lifeState == DEAD) {
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(10, 20);
+    display.println("RIP");
+    display.setCursor(10, 40);
+    display.println("CATTIE");
+    display.display();
+    return;
+  }
   if (currentView == MENU_VIEW) {
     drawMenu();
   } else if (currentView == STATS_VIEW) {
@@ -627,6 +687,17 @@ void setup() {
 void loop() {
   updateMpu();
   updateDht();
+
+  if (lifeState == DEAD ){
+    if(millis() - deathTime >= 3000){
+      lifeState = ALIVE;
+    }
+    else {
+      drawCurrentView();
+      delay(16);
+      return;
+    }
+  }
   updatePetTimers();
   handleButtons();
 
