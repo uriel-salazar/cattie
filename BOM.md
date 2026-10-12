@@ -19,7 +19,7 @@
 | [10 kΩ resistor](https://www.geekfactory.mx/producto/resistencia-1-4-de-watt-5-tolerancia-1-ohm-a-10-mohm/?attribute_valor=10) | pull-up on the DHT11 data line, so the signal reads high when the sensor isn’t transmitting. | 1 | $0.05 | $0.05 | [Geekfactory](https://www.geekfactory.mx/producto/resistencia-1-4-de-watt-5-tolerancia-1-ohm-a-10-mohm/?attribute_valor=10) |
 | [Switches MX](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) | Starbie’s two buttons | 1 | $4.62 | $4.62 | [Aliexpress](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) |
 | **Parts subtotal** | — | — | — | **$20.96** | — |
-| **Tax & shipping** | — | — | — | **$0.00** | — |
-| **Total** | — | — | — | **$20.96** | — |
+| **Tax & shipping** | — | — | — | **$11.95** | — |
+| **Total** | — | — | — | **$32.91** | — |
 
-$9.04 left of the tier's funding.
+**$2.91 over the tier's funding.** Every tier gives a fixed amount for parts, so this needs cutting back or a higher tier.
