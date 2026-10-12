@@ -13,13 +13,12 @@
 | Part | What it's for | Qty | Unit | Total | Vendor |
 | --- | --- | --- | --- | --- | --- |
 | [USB-A a USB-C Wire](https://es.aliexpress.com/item/1005006282457529.html?spm=a2g0o.cart.0.0.e0d87a9dtWtLmq&mp=1&gatewayAdapt=glo2esp) | powers the board and uploads the firmware. | 1 | $2.39 | $2.39 | [Aliexpress](https://es.aliexpress.com/item/1005006282457529.html?spm=a2g0o.cart.0.0.e0d87a9dtWtLmq&mp=1&gatewayAdapt=glo2esp) |
-| [OLED 0.96](https://www.geekfactory.mx/producto/display-oled-0-96-128x64-ssd1306-i2c/) | the screen that shows my pet | 1 | $3.75 | $3.75 | [Geekfactory](https://www.geekfactory.mx/producto/display-oled-0-96-128x64-ssd1306-i2c/) |
 | [MPU6050](https://www.geekfactory.mx/producto/mpu6050-acelerometro-y-giroscopio-6-ejes-digital/) | It detects tilt and shaking, which move the menu selector and trigger the shake reaction. | 1 | $4.62 | $4.62 | [Geekfactory](https://www.geekfactory.mx/producto/mpu6050-acelerometro-y-giroscopio-6-ejes-digital/) |
 | [XIAO ESP32-C3](https://es.aliexpress.com/item/1005006979844970.html?spm=a2g0o.cart.0.0.5c9f7a9dAO5f8z&mp=1&pdp_ext_f=%7B%22cart2PdpParams%22%3A%7B%22pdpBusinessMode%22%3A%22retail%22%7D%7D&gatewayAdapt=glo2esp) | The brain for the whole project | 1 | $5.53 | $5.53 | [Aliexpress](https://es.aliexpress.com/item/1005006979844970.html?spm=a2g0o.cart.0.0.5c9f7a9dAO5f8z&mp=1&pdp_ext_f=%7B%22cart2PdpParams%22%3A%7B%22pdpBusinessMode%22%3A%22retail%22%7D%7D&gatewayAdapt=glo2esp) |
 | [10 kΩ resistor](https://www.geekfactory.mx/producto/resistencia-1-4-de-watt-5-tolerancia-1-ohm-a-10-mohm/?attribute_valor=10) | pull-up on the DHT11 data line, so the signal reads high when the sensor isn’t transmitting. | 1 | $0.05 | $0.05 | [Geekfactory](https://www.geekfactory.mx/producto/resistencia-1-4-de-watt-5-tolerancia-1-ohm-a-10-mohm/?attribute_valor=10) |
 | [Switches MX](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) | Starbie’s two buttons | 1 | $4.62 | $4.62 | [Aliexpress](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) |
-| **Parts subtotal** | — | — | — | **$20.96** | — |
+| **Parts subtotal** | — | — | — | **$17.21** | — |
 | **Tax & shipping** | — | — | — | **$17.86** | — |
-| **Total** | — | — | — | **$38.82** | — |
+| **Total** | — | — | — | **$35.07** | — |
 
-**$8.82 over the tier's funding.** Every tier gives a fixed amount for parts, so this needs cutting back or a higher tier.
+**$5.07 over the tier's funding.** Every tier gives a fixed amount for parts, so this needs cutting back or a higher tier.
