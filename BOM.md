@@ -12,12 +12,11 @@
 
 | Part | What it's for | Qty | Unit | Total | Vendor |
 | --- | --- | --- | --- | --- | --- |
-| [XIAO ESP32C3](https://www.digikey.com.mx/es/products/detail/seeed-technology-co-ltd/113991054/16652880) | Microcontroller development board to use it with PCB | 1 | $5.25 | $5.25 | [Seeed Technology Co., Ltd](https://www.digikey.com.mx/es/products/detail/seeed-technology-co-ltd/113991054/16652880) |
 | [USB-A a USB-C Wire](https://es.aliexpress.com/item/1005006282457529.html?spm=a2g0o.cart.0.0.e0d87a9dtWtLmq&mp=1&gatewayAdapt=glo2esp) | powers the board and uploads the firmware. | 1 | $2.39 | $2.39 | [Aliexpress](https://es.aliexpress.com/item/1005006282457529.html?spm=a2g0o.cart.0.0.e0d87a9dtWtLmq&mp=1&gatewayAdapt=glo2esp) |
 | [OLED 0.96](https://www.geekfactory.mx/producto/display-oled-0-96-128x64-ssd1306-i2c/) | the screen that shows my pet | 1 | $3.75 | $3.75 | [Geekfactory](https://www.geekfactory.mx/producto/display-oled-0-96-128x64-ssd1306-i2c/) |
 | [MPU6050](https://www.geekfactory.mx/producto/mpu6050-acelerometro-y-giroscopio-6-ejes-digital/) | It detects tilt and shaking, which move the menu selector and trigger the shake reaction. | 1 | $4.62 | $4.62 | [Geekfactory](https://www.geekfactory.mx/producto/mpu6050-acelerometro-y-giroscopio-6-ejes-digital/) |
-| **Parts subtotal** | — | — | — | **$16.01** | — |
+| **Parts subtotal** | — | — | — | **$10.76** | — |
 | **Tax & shipping** | — | — | — | **$0.00** | — |
-| **Total** | — | — | — | **$16.01** | — |
+| **Total** | — | — | — | **$10.76** | — |
 
-$13.99 left of the tier's funding.
+$19.24 left of the tier's funding.
