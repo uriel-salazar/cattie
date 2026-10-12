@@ -19,7 +19,7 @@
 | [Switches MX](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) | Starbie’s two buttons | 1 | $4.62 | $4.62 | [Aliexpress](https://es.aliexpress.com/item/1005006096702464.html?spm=a2g0o.productlist.main.11.3697424czXLMqB&algo_pvid=898898b4-4af9-47c7-ba77-b2010a6b3d35&pdp_ext_f=%7B%22order%22%3A%22-1%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006096702464%7C_p_origin_prod%3A) |
 | [Switches MX UI](https://es.aliexpress.com/item/1005008558593357.html?spm=a2g0o.cart.0.0.26ef7a9dTVo84Z&mp=1&gatewayAdapt=glo2esp) | to add the cover for the buttons | 1 | $3.53 | $3.53 | [Aliexpress](https://es.aliexpress.com/item/1005008558593357.html?spm=a2g0o.cart.0.0.26ef7a9dTVo84Z&mp=1&gatewayAdapt=glo2esp) |
 | **Parts subtotal** | — | — | — | **$21.61** | — |
-| **Tax & shipping** | — | — | — | **$0.00** | — |
-| **Total** | — | — | — | **$21.61** | — |
+| **Tax & shipping** | — | — | — | **$5.87** | — |
+| **Total** | — | — | — | **$27.48** | — |
 
-$8.39 left of the tier's funding.
+$2.52 left of the tier's funding.
